@@ -1,3 +1,4 @@
+import tile_generation
 
 '''
 Layout for a tile
@@ -5,7 +6,6 @@ Layout for a tile
 8  0  16
 32 64 128
 
-'''
 def print_tile(tile_list):
     positions = [1,2,4,8,0,16,32,64,128]
     tile = []
@@ -53,5 +53,10 @@ def decompose(x):
 def generate_map(seed: str, size: int):
     for x in range(size*size):
         print(x+1)
+'''
+x = tile_generation.tile_element(prev_path=1)
 
-generate_map(1,5)
+print(f'Town is: {x.town}')
+print(f'Environment is: {x.environ}')
+print(f'Paths: N - {x.N}, E - {x.E}, S - {x.S}, W - {x.W}')
+print(type(x.E))
