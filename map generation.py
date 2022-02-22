@@ -60,3 +60,11 @@ print(f'Town is: {x.town}')
 print(f'Environment is: {x.environ}')
 print(f'Paths: N - {x.N}, E - {x.E}, S - {x.S}, W - {x.W}')
 print(type(x.E))
+
+test_point = tile_generation.point()
+z = tile_generation.point(1,1)
+print(test_point)
+
+point_dict = {test_point : "testing"}
+
+print(f'is point {z} in the dictionary: {z in point_dict}')
