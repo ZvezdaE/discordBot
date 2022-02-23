@@ -1,4 +1,5 @@
 import tile_generation
+import random
 
 '''
 Layout for a tile
@@ -54,17 +55,9 @@ def generate_map(seed: str, size: int):
     for x in range(size*size):
         print(x+1)
 '''
-x = tile_generation.tile_element(prev_path=1)
 
-print(f'Town is: {x.town}')
-print(f'Environment is: {x.environ}')
-print(f'Paths: N - {x.N}, E - {x.E}, S - {x.S}, W - {x.W}')
-print(type(x.E))
 
-test_point = tile_generation.point()
-z = tile_generation.point(1,1)
-print(test_point)
-
-point_dict = {test_point : "testing"}
-
-print(f'is point {z} in the dictionary: {z in point_dict}')
+my_map = tile_generation.map()
+temp_point = tile_generation.point(0,0)
+x = my_map.get_tile(temp_point)
+print(x.tile_description())
