@@ -57,7 +57,9 @@ def generate_map(seed: str, size: int):
 '''
 
 
-my_map = tile_generation.map()
-temp_point = tile_generation.point(0,0)
-x = my_map.get_tile(temp_point)
-print(x.tile_description())
+temp = tile_generation.character()
+print(temp.loc_desc())
+
+print(temp.move("N"))
+
+print(temp.move("S"))
