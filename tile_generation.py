@@ -194,7 +194,7 @@ class tile_element:
         __paths = self.get_paths_text()
         __town = self.get_town()
         
-        return __enviro + "\n" + __paths + "\n" + __town
+        return "> " + __enviro + "\n" + __paths + "\n" + __town
 
 
 """
@@ -344,3 +344,28 @@ class character:
         """Return the text description of the tile."""
         return self.my_map.get_tile(self.location).tile_description()
 
+class inventory:
+    def __init__(self):
+        self.size = 6
+        self.items = []
+        self.full = False
+
+    def add(self, item):
+        if not self.full:
+            self.items.append(item)
+        if len(self.items) < 6:
+            self.full = False
+
+    def remove(self, item):
+        for x in self.items:
+            if x == item:
+                self.item.remove(item)
+
+class items:
+    def __init__(self, name, desc):
+        self.name = name
+        self.desc = desc
+        self.depends = []
+
+    def add_depends(self, item):
+        self.depends.append(item)

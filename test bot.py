@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
-GUILD = os.getenv('DISCORD_GUILD')
+#GUILD = os.getenv('DISCORD_GUILD')
 
 bot = commands.Bot(command_prefix='!', case_insensitive = True)
 
@@ -41,6 +41,10 @@ class main_game():
 
 this_game = main_game()
 
+@bot.command(name="Baby")
+async def baby(ctx):
+    await ctx.reply("> Play that funky music white boy!")
+    
 @bot.command(name='n', help="Move North")
 async def move_N(ctx):
     __id = ctx.message.author.id
