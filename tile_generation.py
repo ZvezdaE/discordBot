@@ -13,7 +13,7 @@ A class to manage the location(point) on the grid
 '''    
 class point:
     def __init__(self, x: int = 0, y: int = 0) -> None:
-        """Create a point object with the provided credentials."""
+        """Create a point object with the provided coordinates."""
         self.__x = x
         self.__y = y
 
